@@ -10,6 +10,8 @@ app_file: app.py
 
 # Dialogue Summarizer
 
+**Try the live summarizer:** [Open the Hugging Face demo](https://huggingface.co/spaces/kambaledipali93/dialogue-summarizer)
+
 A modular end-to-end dialogue summarization project using Hugging Face Transformers, PyTorch, and the SAMSum dataset. It follows the five-stage architecture in the project brief:
 
 1. **Ingest** SAMSum dialogue and summary examples from Hugging Face Datasets.
