@@ -6,6 +6,7 @@ from functools import lru_cache
 from pathlib import Path
 
 import gradio as gr
+import spaces
 
 # Make the src-layout package importable when the Space runs this root-level app.
 sys.path.insert(0, str(Path(__file__).parent / "src"))
@@ -25,6 +26,8 @@ def get_summarizer() -> Summarizer:
     return Summarizer(MODEL_ID, max_new_tokens=96, num_beams=4)
 
 
+# Allocate ZeroGPU hardware only while a request is being summarized.
+@spaces.GPU
 def summarize_dialogue(dialogue: str) -> str:
     """Validate a request and generate its dialogue summary."""
     if not dialogue.strip():
